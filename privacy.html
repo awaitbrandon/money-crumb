@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoneyCrumb privacy policy</title>
+  <meta name="description" content="What MoneyCrumb keeps on your phone, and the little it sends online.">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- The text of docs/LAUNCH-KIT.md's privacy policy. When it changes, change both, with
+         PRIVACY_UPDATED in src/lib/privacy.ts and the date below. -->
+    <header>
+      <img src="favicon.png" alt="">
+      <a href="./">MoneyCrumb</a>
+    </header>
+    <h1>MoneyCrumb privacy policy</h1>
+    <p class="meta">Effective 27 Oct 2026. MoneyCrumb is made by StackVerse. Questions: <a href="mailto:stackverse.app@gmail.com">stackverse.app@gmail.com</a>.</p>
+
+    <h2>The short version</h2>
+    <div class="card">
+      <p>MoneyCrumb keeps what you log on your phone. There’s no account, no ads, no analytics, no crash reporting and no MoneyCrumb server, so we don’t receive what you log.</p>
+    </div>
+
+    <h2>What stays on your phone</h2>
+    <p>Everything you enter: entries, amounts, names and notes, categories, accounts and balances, budgets, recurring bills, favourites, Pick for Me wheels and settings. It lives in a database inside the app.</p>
+
+    <h2>What goes online</h2>
+    <ul>
+      <li><strong>Exchange rates from Frankfurter</strong> (api.frankfurter.dev). This happens when MoneyCrumb opens and its rates are more than a day old, and for past days whose entries still use an estimated rate. The requests contain currency codes and a date, never your amounts or anything you logged.</li>
+      <li><strong>Exchange rates from the free currency-api</strong> (cdn.jsdelivr.net and currency-api.pages.dev), only when Frankfurter can’t be reached. These contain a currency code and a date.</li>
+      <li><strong>App updates from Expo</strong> (u.expo.dev). When it opens, MoneyCrumb asks whether a newer version is available and downloads it if so. The request carries the app version and update channel, your phone’s operating system and a random install code, never anything you logged. <a href="https://expo.dev/privacy">Expo’s privacy policy</a> covers that service.</li>
+    </ul>
+    <p>Like any web request, these show the service your IP address. Their own privacy policies cover what they do with it.</p>
+
+    <h2>Backups and imports</h2>
+    <ul>
+      <li>When you export a backup or a CSV, or share a picture or text (a pick, your month, a habit or an item’s prices), it goes wherever you send it. We never receive it. A picture shows amounts only if you tick Show amounts.</li>
+      <li>MoneyCrumb keeps a snapshot of its data in its own storage, renewed daily and before an import or a merge. If your phone’s Google backup is on, Android may copy the app’s data, snapshot included, to your Google account, as it does for other apps. You can turn this off in your phone’s settings.</li>
+      <li>Files you import (a Money+ backup or a CSV) are read on your phone and not uploaded. If you use the AI prompt to convert another app’s export, you share that file with the AI service yourself, and it sees what’s in it.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Notifications:</strong> asked only when you turn on a reminder for a recurring bill. Reminders are scheduled on your phone.</li>
+      <li><strong>Granted at install, without a prompt:</strong>
+        <ul>
+          <li>internet and network status, for exchange rates and app updates</li>
+          <li>vibration, for haptics</li>
+          <li>run at startup, so bill reminders are set again after a restart</li>
+          <li>keeping the phone awake, added by the notifications library that schedules bill reminders</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Deleting your data</h2>
+    <p>Delete entries in the app, or uninstall MoneyCrumb to remove everything it stored on the phone. Backups you exported stay where you saved them.</p>
+
+    <h2>Children</h2>
+    <p>MoneyCrumb is meant for adults and is not directed at children.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted here with a new effective date.</p>
+
+    <footer>© 2026 StackVerse · <a href="./">MoneyCrumb</a></footer>
+  </main>
+</body>
+</html>
