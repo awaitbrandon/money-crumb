@@ -30,6 +30,30 @@
       </a>
     </div>
 
+    <section class="beta-card" aria-labelledby="beta-title">
+      <div class="beta-heading">
+        <div>
+          <p class="beta-eyebrow" data-en="ANDROID INTERNAL TESTING" data-zh="安卓内测">ANDROID INTERNAL TESTING</p>
+          <h2 id="beta-title" data-en="Help Test MoneyCrumb" data-zh="帮助测试 MoneyCrumb">Help Test MoneyCrumb</h2>
+        </div>
+        <div class="language-switch" role="group" aria-label="Section language">
+          <button type="button" class="language-button is-active" data-language="en" aria-pressed="true">EN</button>
+          <button type="button" class="language-button" data-language="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
+      <p class="beta-intro" data-en="Try MoneyCrumb on Android and help us make everyday expense tracking even better." data-zh="抢先体验 MoneyCrumb 安卓版，帮助我们把日常记账做得更好。">Try MoneyCrumb on Android and help us make everyday expense tracking even better.</p>
+
+      <ol class="beta-steps">
+        <li data-en="Join the test using the button below." data-zh="点击下方按钮加入测试。">Join the test using the button below.</li>
+        <li data-en="Install MoneyCrumb from the Google Play page." data-zh="在 Google Play 页面安装 MoneyCrumb。">Install MoneyCrumb from the Google Play page.</li>
+        <li data-en="Open the app and try it out." data-zh="打开应用并体验各项功能。">Open the app and try it out.</li>
+      </ol>
+
+      <p class="beta-notice"><strong data-en="A small daily commitment" data-zh="每日小小的参与">A small daily commitment</strong><br><span data-en="Please open the app at least once a day for 14 consecutive days to complete the test." data-zh="请连续 14 天每天至少打开应用一次，以完成本次测试。">Please open the app at least once a day for 14 consecutive days to complete the test.</span></p>
+      <p class="beta-feedback" data-en="We’d love to hear what you think—share any feedback, bugs, or suggestions with us." data-zh="欢迎告诉我们你的想法，也请随时分享反馈、问题或建议。">We’d love to hear what you think—share any feedback, bugs, or suggestions with us.</p>
+      <a class="beta-cta" href="https://play.google.com/apps/testing/com.stackverse.moneycrumb" target="_blank" rel="noopener noreferrer" data-en="Join the Beta Test" data-zh="加入内测">Join the Beta Test</a>
+    </section>
+
     <ul>
       <li><a href="privacy.html">Privacy policy</a></li>
       <li><a href="terms">Terms of Service</a></li>
@@ -37,5 +61,24 @@
     </ul>
     <footer>© 2026 StackVerse</footer>
   </main>
+  <script>
+    const languageButtons = document.querySelectorAll('.language-button');
+    const localizedElements = document.querySelectorAll('[data-en][data-zh]');
+
+    languageButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const language = button.dataset.language;
+        localizedElements.forEach((element) => {
+          element.textContent = element.dataset[language];
+        });
+        languageButtons.forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', String(isActive));
+        });
+        document.documentElement.lang = language === 'zh' ? 'zh-Hans' : 'en';
+      });
+    });
+  </script>
 </body>
 </html>
