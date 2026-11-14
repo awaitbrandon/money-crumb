@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MoneyCrumb privacy policy</title>
-  <meta name="description" content="How MoneyCrumb handles your data and when it may connect to online services.">
+  <meta name="description" content="How MoneyCrumb handles your data: what stays on your phone, and the few things that go online.">
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,31 +15,59 @@
       <a href="./">MoneyCrumb</a>
     </header>
     <h1>MoneyCrumb privacy policy</h1>
-    <p class="meta">Effective 27 Oct 2026.</p>
+    <p class="meta">Effective 11 Nov 2026. MoneyCrumb is made by StackVerse. Questions: <a href="mailto:stackverse.app@gmail.com">stackverse.app@gmail.com</a>.</p>
 
-    <h2>Overview</h2>
-    <p>MoneyCrumb is designed to keep your financial information on your device whenever possible. We do not require you to create an account to use the app. We do not sell personal data, and we do not use the app to advertise to you.</p>
+    <h2>The short version</h2>
+    <p>MoneyCrumb keeps what you log on your phone. There’s no account, no ads, no analytics, no automatic crash reporting and no MoneyCrumb server, so we don’t receive what you log. We receive feedback, or a crash report, only when you tap Send.</p>
 
-    <h2>Information we store</h2>
-    <p>MoneyCrumb may store information you enter in the app, such as entries, amounts, names and notes, categories, accounts, balances, budgets, recurring items, favourites, saved selections, and app settings. This information is stored locally on your device and is generally not sent to a MoneyCrumb server.</p>
+    <h2>What stays on your phone</h2>
+    <p>Everything you enter: entries, amounts, names and notes, categories, accounts and balances, budgets, recurring bills, favourites, Pick for Me wheels and settings. It lives in a database inside the app. The name and photo on your profile card, if you add them, stay here too: the photo is copied into the app’s own storage from the picture you choose, and a backup file keeps your name but not the photo.</p>
 
-    <h2>Information we may send online</h2>
-    <p>Some features may require the app to connect to online services to provide current information, perform updates, or access external tools. In those cases, the app may send limited data needed for the requested function, such as the request type, date, currency code, device technical information, and the device’s internet address. These third-party services may use that information in accordance with their own privacy policies.</p>
+    <h2>What goes online</h2>
+    <ul>
+      <li>Exchange rates from Frankfurter (api.frankfurter.dev). This happens when MoneyCrumb opens and its rates are more than a day old, when you tap Update rates in Currencies, and for past days whose entries still use an estimated rate. The requests contain currency codes and a date, never your amounts or anything you logged.</li>
+      <li>Exchange rates from the free currency-api (cdn.jsdelivr.net and currency-api.pages.dev), only when Frankfurter can’t be reached. These contain a currency code and a date.</li>
+      <li>App updates from Expo (u.expo.dev). When it opens, MoneyCrumb asks whether a newer version is available and downloads it if so. The request carries the app version and update channel, your phone’s operating system and a random install code, never anything you logged. Expo’s privacy policy (expo.dev/privacy) covers that service.</li>
+      <li>Feedback you send, through Discord (discord.com), only when you write feedback in Settings and tap Send, or tap Send report on the screen that shows after a crash. See “Feedback you send” below.</li>
+      <li>MoneyCrumb Plus, through RevenueCat (api.revenuecat.com) and Google Play. When MoneyCrumb opens, it checks whether you have Plus; buying and restoring go through Google Play’s own screens. RevenueCat gets a random app user code and your Plus purchases, never anything you logged, and MoneyCrumb never sees your card. RevenueCat’s privacy policy (revenuecat.com/privacy) covers that service.</li>
+    </ul>
+    <p>Like any web request, these show the service your IP address. Their own privacy policies cover what they do with it.</p>
 
-    <h2>App updates and external services</h2>
-    <p>MoneyCrumb may check for app updates and download them when available. This may require sending the current app version and basic technical information to the service providing the update. If you use a feature that relies on a third-party service, that service may receive only the information required to complete the requested task.</p>
+    <h2>Feedback you send</h2>
+    <p>Send feedback in Settings posts your message to the MoneyCrumb team’s Discord, where only the team reads it. It carries what you wrote, the kind you picked (a problem, an idea or something else), the email or Discord name you add if you want a reply, and, unless you untick it, the app version and your phone’s model and system version. Nothing you logged is attached. Discord’s privacy policy (discord.com/privacy) covers how it stores the message. To have your feedback deleted, write to us.</p>
+    <p>If MoneyCrumb hits an error, the screen it shows offers Send report. It shows everything the report holds before you send it: the error and where in the app it happened, and the app version and your phone’s model and system version, plus a note if you write one. It goes to the same Discord, only when you tap Send report.</p>
+    <p>Joining the MoneyCrumb Discord is up to you. It opens Discord, and what you post there is visible to its members under Discord’s terms.</p>
 
-    <h2>Backups and sharing</h2>
-    <p>When you export, share, or send data from the app, it is sent only where you choose to send it. The app does not automatically upload your information elsewhere. Files you import are processed on your device, and any data sent to a third-party service is only sent if you choose to use that feature.</p>
+    <h2>Backups and imports</h2>
+    <ul>
+      <li>When you export a backup or a CSV, or share a picture or text (a pick, your month, a habit or an item’s prices), it goes wherever you send it. We never receive it. A picture shows amounts only if you tick Show amounts.</li>
+      <li>MoneyCrumb keeps a snapshot of its data in its own storage, renewed daily and before an import or a merge. If your phone’s own backup is on (Google backup on Android, iCloud Backup on iPhone), it may copy the app’s data, snapshot included, to your Google or iCloud account, as it does for other apps. You can turn this off in your phone’s settings.</li>
+      <li>Files you import (a Money+ backup or a CSV) are read on your phone and not uploaded. If you use the AI prompt to convert another app’s export, you share that file with the AI service yourself, and it sees what’s in it.</li>
+    </ul>
 
-    <h2>Device permissions</h2>
-    <p>MoneyCrumb may request permissions needed for app functionality, such as notifications, internet access, and device features needed to support reminders or other in-app behaviour. These permissions are used only to provide the services you enable.</p>
+    <h2>Permissions</h2>
+    <ul>
+      <li>Pay through Google Play: so you can buy Plus.</li>
+      <li>Notifications: asked only when you turn on a reminder for a recurring bill. Reminders are scheduled on your phone.</li>
+      <li>On iPhone, that is the only permission MoneyCrumb asks for.</li>
+      <li>On Android, granted at install, without a prompt:
+        <ul>
+          <li>internet and network status, for exchange rates, app updates and feedback you send</li>
+          <li>vibration, for haptics</li>
+          <li>run at startup, so bill reminders are set again after a restart</li>
+          <li>keeping the phone awake, added by the notifications library that schedules bill reminders</li>
+        </ul>
+      </li>
+    </ul>
 
     <h2>Deleting your data</h2>
-    <p>You can delete entries in the app or uninstall the app to remove the data stored on your device. Backups or exported files that you save elsewhere remain under your control and are not managed by the app.</p>
+    <p>Delete entries in the app, or uninstall MoneyCrumb to remove everything it stored on the phone. Backups you exported stay where you saved them.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>If this policy changes, the updated version will be posted here with a new effective date.</p>
+    <h2>Children</h2>
+    <p>MoneyCrumb is meant for adults and is not directed at children.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted here with a new effective date.</p>
 
     <footer>© 2026 MoneyCrumb · <a href="./">MoneyCrumb</a></footer>
   </main>
